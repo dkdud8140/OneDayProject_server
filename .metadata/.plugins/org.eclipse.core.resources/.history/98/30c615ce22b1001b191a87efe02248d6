@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Oneday_Server_food">
+        <property name="context-root" value="diet"/>
+        <property name="java-output-path" value="/Oneday_Server_food/build/classes"/>
+    </wb-module>
+</project-modules>

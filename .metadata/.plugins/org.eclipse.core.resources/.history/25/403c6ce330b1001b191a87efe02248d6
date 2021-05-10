@@ -1,0 +1,18 @@
+package com.com.food.model;
+
+//입력한 일일 섭취량 
+public class MyfoodsDTO {
+
+	private String mf_date;
+	private String mf_code;
+	private String mf_name;
+	private Integer mf_eat;
+	private String mf_kcal;
+	private String mf_protein;
+	private String mf_fat;
+	private String mf_car;
+	private String mf_sugar;
+    
+	
+	
+}

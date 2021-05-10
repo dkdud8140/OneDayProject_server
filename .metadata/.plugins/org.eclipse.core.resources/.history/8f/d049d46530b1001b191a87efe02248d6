@@ -1,0 +1,6 @@
+package com.com.food.model;
+
+//입력한 일일 섭취량 
+public class MyfoodsDTO {
+
+}

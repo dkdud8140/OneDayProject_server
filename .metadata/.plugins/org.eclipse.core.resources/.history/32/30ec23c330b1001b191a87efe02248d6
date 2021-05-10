@@ -1,0 +1,17 @@
+package com.com.food.model;
+
+//입력한 일일 섭취량 
+public class MyfoodsDTO {
+
+	mf.mf_date;
+    mf.mf_code;
+    ff.f_name;
+    mf.mf_eat;
+    (ff.f_kcal * mf.mf_eat) AS 칼로리,
+    (ff.f_protein * mf.mf_eat) AS 단백질,
+    (ff.f_fat * mf.mf_eat) AS 지방,
+    (ff.f_car * mf.mf_eat) AS 탄수화물,
+    (ff.f_sugar * mf.mf_eat) AS 총당류
+	
+	
+}

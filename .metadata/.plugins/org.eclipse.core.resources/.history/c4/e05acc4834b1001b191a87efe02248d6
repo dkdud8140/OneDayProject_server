@@ -1,0 +1,18 @@
+package com.com.food.service;
+
+public class DBConnection {
+
+	private static String DBConn;
+	
+	static {
+
+		DBConn = null ;
+		
+		
+	
+	
+	}
+	
+	
+	
+}

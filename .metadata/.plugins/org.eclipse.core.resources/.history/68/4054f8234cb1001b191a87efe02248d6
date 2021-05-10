@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>나의 다이어트 일기</title>
+</head>
+<body>
+	<h1>다이어트 일기</h1>
+	
+	<h3><a href = "diet/food/insert">식사 기록하기</a></h3>
+	
+	<h3>조회하기</h3>
+	
+	<h3>조회하기</h3>
+
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+package com.com.food.model;
+
+public class MyfoodsDTO {
+
+}

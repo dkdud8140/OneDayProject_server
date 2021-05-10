@@ -1,0 +1,21 @@
+package com.com.food.model;
+
+// view_식품정보 DTO
+public class FoodsDTO {
+
+	private String f_code; 		//AS 식품코드,
+	private String f_name; 		//AS 식품명,
+	private String f_year; 						//AS 출시연도,
+	private String f_ccode; 					//AS 제조사코드,
+	private String c_name ;						//AS 제조사명,
+	private String f_icode ;					//AS 분류코드,
+	private String i_name ;						//AS 분류명,
+	private Integer f_offer ;					//AS 일회제공량,
+	private Integer f_total ;					//AS 총내용량,
+	private Integer f_kcal ;						//AS 에너지,
+	private Integer f_protein; 					//AS 단백질,
+	private Integer f_fat ;						//AS 지방,
+	private Integer f_car ;						//AS 탄수화물,
+	private Integer f_sugar; 					//AS 총당류
+	
+}

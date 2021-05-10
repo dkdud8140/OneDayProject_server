@@ -1,0 +1,15 @@
+package com.com.food.service;
+
+public interface FoodService {
+	
+	public void insert();
+	
+	public void selectAll();
+	public void selectDate();
+
+	
+	
+	//구현하지 않을 메소드
+	public void delete();
+	public void update();
+}
