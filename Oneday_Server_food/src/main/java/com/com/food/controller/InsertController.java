@@ -2,7 +2,9 @@ package com.com.food.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -70,9 +72,10 @@ public class InsertController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		resp.setContentType("text/html;cahrset=UTF-8");
+		resp.setContentType("text/html;charset=UTF-8");
 		req.setCharacterEncoding("UTF-8");
-
+		PrintWriter out = resp.getWriter();
+		
 		String year = req.getParameter("year");
 		String month = req.getParameter("month");
 		String day = req.getParameter("day");
@@ -80,6 +83,29 @@ public class InsertController extends HttpServlet {
 		String mf_code = req.getParameter("code");
 		String strEat = req.getParameter("eat");
 
+		Boolean bY = (year == null || year.equals(""));
+		Boolean bM = (month == null || month.equals(""));
+		Boolean bD = (day == null || day.equals(""));
+		
+		if (bY || bM || bD) {
+			out.println("날짜는 반드시 입력해야 합니다.");
+			out.close();
+		} else if(mf_code == null || mf_code.equals("")){
+			out.println("식품코드는 반드시 입력해야 합니다.");
+			out.close();
+		} else if(strEat == null || strEat.equals("")){
+			out.println("섭취량은 반드시 입력해야 합니다.");
+			out.close();
+		} else {
+//		String date = String.format("%s-%s-%s", year,month,day);
+//		SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd");
+//		try {
+//			Date d = sd.parse(date);
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//			System.out.println("날짜 타입 오류");
+//		}
+		
 		Integer mf_eat = Integer.valueOf(strEat);
 
 		MyFoodsVO mfVO = new MyFoodsVO();
@@ -90,13 +116,13 @@ public class InsertController extends HttpServlet {
 		int result = fSer.insert(mfVO);
 
 		if (result > 0) {
-			resp.sendRedirect("/");
+			resp.sendRedirect("/diet");
 		} else {
-			PrintWriter out = resp.getWriter();
 			out.println("입력값이 잘못되었습니다.");
 			resp.sendRedirect("/diet");
 		}
 
+		}
 	}
 
 }

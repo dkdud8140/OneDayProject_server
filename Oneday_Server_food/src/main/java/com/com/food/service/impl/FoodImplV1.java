@@ -111,12 +111,12 @@ public class FoodImplV1 implements FoodService {
 			pStr.setString(1, myfoodsVO.getMf_date());
 			pStr.setString(2, myfoodsVO.getMf_code());
 			pStr.setInt(3, myfoodsVO.getMf_eat());
-			pStr.executeUpdate();
+			int result = pStr.executeUpdate();
 			
 			pStr.close();
-			int result = pStr.executeUpdate();
+//			int result = pStr.executeUpdate();
+			System.out.println("DB 입력 성공");
 			return result;
-			
 			
 		} catch (SQLException e) {
 			System.out.println("DB 입력 실패");

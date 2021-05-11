@@ -4,3 +4,4 @@
 
 5월 11, 2021 08:35:37.931 NEW SESSION
 5월 11, 2021 08:35:37.932 [5500:1836:0511/083537.931:ERROR:device_event_log_impl.cc(214)] [08:35:37.931] Bluetooth: bluetooth_adapter_winrt.cc:1072 Getting Default Adapter failed.
+5월 11, 2021 11:03:07.684 [5500:1836:0511/110307.684:ERROR:device_event_log_impl.cc(214)] [11:03:07.683] USB: usb_service_win.cc:258 Failed to get device driver name: 요소가 없습니다. (0x490)

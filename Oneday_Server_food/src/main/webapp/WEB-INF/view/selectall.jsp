@@ -6,34 +6,56 @@
 <head>
 <meta charset="UTF-8">
 <title>나의 다이어트 일기</title>
-
 <style>
-	th,td {padding : 10px;}
-	input {width : 100px;}
+body { width : 1200px; position : absolute; left : 50%; transform : translateX(-50%);}
+p { text-align: center;}
+input {	width : 80px;
+		border : 0.5px solid #cccccc}
+a { text-decoration-line : none;
+	color : #20B2AA	;}
+a:hover { color : #DB7093 ;}
+button:hover{background-color: #FFB6C1 ;
+			color: white;}
+h1, h2, h3, h4, h5, h6 {text-align: center;}
+form { width: 1000px; float : right; }
+table{ position : relative; left : 50%; transform : translateX(-50%);}
+button {background-color: 	#AFEEEE;
+	   border: none;
+	   padding : 5px 5px;
+	   text-align: center;
+	   cursor: pointer;}
+table {
+	border-top : 1px solid #cccccc;
+	border-collapse: collapse;}
+th,td {	padding : 15px 10px; 
+	border-top : 1px solid #cccccc;}
+thead {
+	background-color: 	#E0FFFF; }
+body { font-family : "Noto Sans CJK KR Light", "돋움", dotum, arial,"굴림", gulim}
 </style>
 
 </head>
 <body>
 	
-	<h2>나의 다이어트 일기</h2>
-	
+	<h1>나의 다이어트 일기</h1>
+	<pre>
+	</pre>
 	<h3><a href = "/diet/insert/selectName">새로운 식단 입력하기</a></h3>
-	
-	<h3>날짜별 식단 조회하기</h3>
+	<pre>
+	</pre>
+	<p>날짜별 식단 조회하기</p>
 	<form action ="/diet/dateSerch" method="get">
 	<input name ="sYear">년 <input name ="sMonth">월 <input name ="sDay">일 ~
 	<input name ="lYear">년 <input name ="lMonth">월 <input name ="lDay">일 
 	<button>조회하기</button>
 	</form>
+	<pre>
 	
-	<p> 
-	<p> 
-	<p> 
-	
-	
+
+	</pre>
 	<table>
-		<thead>
-			<tr>
+		<thead >
+			<tr >
 				<th>일련번호</th>
 				<th>날짜</th>
 				<th>식품코드</th>

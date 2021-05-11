@@ -1,0 +1,22 @@
+
+body { width : 1200px; position : absolute; left : 50%; transform : translateX(-50%);}
+p { text-align: center;}
+input {	width : 80px;}
+a { text-decoration-line : none;
+	color : #20B2AA	;}
+h1, h2, h3, h4, h5, h6 {text-align: center;}
+form { width: 1000px; float : right; }
+table{ position : relative; left : 50%; transform : translateX(-50%);}
+button {background-color: 	#AFEEEE;
+	   border: none;
+	   padding : 5px 5px;
+	   text-align: center;
+	   cursor: pointer;}
+table {
+	border-top : 1px solid #cccccc;
+	border-collapse: collapse;}
+th,td {	padding : 15px 10px; 
+	border-top : 1px solid #cccccc;}
+thead {
+	background-color: 	#E0FFFF; }
+body { font-family : "Noto Sans CJK KR Light", "돋움", dotum, arial,"굴림", gulim}
