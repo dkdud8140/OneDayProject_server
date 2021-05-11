@@ -135,3 +135,24 @@ ORDER BY "날짜";
 
 SELECT * FROM view_식품정보
 WHERE 식품명 Like '%' || '샌드' || '%' ;
+
+
+SELECT * FROM view_일일섭취량
+WHERE 날짜 BETWEEN '2021-04-20' AND '2021-05-10'
+ORDER BY 날짜;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        

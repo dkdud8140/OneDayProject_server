@@ -44,7 +44,7 @@ public class InsertController extends HttpServlet {
 			rDis.forward(req, resp);
 			
 			
-		}else if (subPath.equals("/selectByName")) {	
+		} else if (subPath.equals("/selectByName")) {	
 			
 			List<FoodsDTO> fList = new ArrayList<FoodsDTO>();
 			
@@ -73,7 +73,10 @@ public class InsertController extends HttpServlet {
 		resp.setContentType("text/html;cahrset=UTF-8");
 		req.setCharacterEncoding("UTF-8");
 
-		String mf_date = req.getParameter("date");
+		String year = req.getParameter("year");
+		String month = req.getParameter("month");
+		String day = req.getParameter("day");
+		String mf_date = String.format(year + "-"+month+"-"+day);
 		String mf_code = req.getParameter("code");
 		String strEat = req.getParameter("eat");
 

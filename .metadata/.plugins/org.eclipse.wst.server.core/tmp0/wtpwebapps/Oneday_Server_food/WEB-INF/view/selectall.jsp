@@ -9,6 +9,7 @@
 
 <style>
 	th,td {padding : 10px;}
+	input {width : 100px;}
 </style>
 
 </head>
@@ -16,10 +17,10 @@
 	
 	<h2>나의 다이어트 일기</h2>
 	
-	<h5><a href = "/diet/insert/selectName">새로운 식단 입력하기</a></h5>
+	<h3><a href = "/diet/insert/selectName">새로운 식단 입력하기</a></h3>
 	
 	<h3>날짜별 식단 조회하기</h3>
-	<form action ="">
+	<form action ="/diet/dateSerch" method="get">
 	<input name ="sYear">년 <input name ="sMonth">월 <input name ="sDay">일 ~
 	<input name ="lYear">년 <input name ="lMonth">월 <input name ="lDay">일 
 	<button>조회하기</button>

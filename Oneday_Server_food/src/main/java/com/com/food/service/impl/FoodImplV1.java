@@ -21,7 +21,36 @@ public class FoodImplV1 implements FoodService {
 		dbConn = DBConnection.getDBConnection();
 	}
 	
+	
+	public List<MyfoodsDTO> select(PreparedStatement pStr) throws SQLException {
+		
+		List<MyfoodsDTO> mfList = new ArrayList<MyfoodsDTO>();
+		ResultSet rSet = pStr.executeQuery();
+		
+		while(rSet.next()) {
+			MyfoodsDTO mfDTO = new MyfoodsDTO();
+			
+			mfDTO.setMf_seq(rSet.getInt("일련번호"));
+			mfDTO.setMf_date(rSet.getString("날짜"));
+			mfDTO.setMf_code(rSet.getString("식품코드"));
+			mfDTO.setMf_name(rSet.getString("식품명"));
+			mfDTO.setMf_eat(rSet.getInt("섭취량"));
+			mfDTO.setMf_kcal(rSet.getInt("칼로리"));
+			mfDTO.setMf_protein(rSet.getInt("단백질"));
+			mfDTO.setMf_fat(rSet.getInt("지방"));
+			mfDTO.setMf_car(rSet.getInt("탄수화물"));
+			mfDTO.setMf_sugar(rSet.getInt("총당류"));
+			mfList.add(mfDTO);
+			
+		}
+		
+		rSet.close();
+		pStr.close();
+		return mfList;
+		
+	}
 
+	
 	public List<MyfoodsDTO> selectAll() {
 		// TODO 기록한 모든 리스트를 조회하는 메소드
 		
@@ -29,41 +58,15 @@ public class FoodImplV1 implements FoodService {
 		sql += " ORDER BY 날짜 ";
 		PreparedStatement pStr = null ;
 		
-		
 		try {
 			pStr = dbConn.prepareStatement(sql);
-			
-			ResultSet rSet = pStr.executeQuery();
-			
-			List<MyfoodsDTO> mfList = new ArrayList<MyfoodsDTO>();
-			
-			while(rSet.next()) {
-				MyfoodsDTO mfDTO = new MyfoodsDTO();
-				
-				mfDTO.setMf_seq(rSet.getInt("일련번호"));
-				mfDTO.setMf_date(rSet.getString("날짜"));
-				mfDTO.setMf_code(rSet.getString("식품코드"));
-				mfDTO.setMf_name(rSet.getString("식품명"));
-				mfDTO.setMf_eat(rSet.getInt("섭취량"));
-				mfDTO.setMf_kcal(rSet.getInt("칼로리"));
-				mfDTO.setMf_protein(rSet.getInt("단백질"));
-				mfDTO.setMf_fat(rSet.getInt("지방"));
-				mfDTO.setMf_car(rSet.getInt("탄수화물"));
-				mfDTO.setMf_sugar(rSet.getInt("총당류"));
-				
-				mfList.add(mfDTO);
-				
-			}
-			
-			rSet.close();
+			List<MyfoodsDTO> mfList = this.select(pStr);
 			pStr.close();
-			return mfList;
-			
+			return mfList ;
 			
 		} catch (SQLException e) {
 			System.out.println("DB 연결 실패");
 		}
-		
 		
 		return null;
 	}
@@ -71,6 +74,25 @@ public class FoodImplV1 implements FoodService {
 	@Override
 	public List<MyfoodsDTO> selectDate(String startDate, String lastDate) {
 		// TODO 기록한 리스트 중 원하는 날짜 조회
+
+		String sql = "SELECT * FROM view_일일섭취량";
+		sql += " WHERE 날짜 BETWEEN ? AND ? ";
+		sql += " ORDER BY 날짜 ";
+		
+		PreparedStatement pStr = null ;
+		
+		try {
+			pStr = dbConn.prepareStatement(sql);
+			pStr.setString(1, startDate);
+			pStr.setString(2, lastDate);
+			List<MyfoodsDTO> mfList = this.select(pStr);
+			pStr.close();
+			return mfList ;
+			
+		} catch (SQLException e) {
+			System.out.println("DB 연결 실패");
+		}
+		
 		return null;
 	}
 
@@ -92,9 +114,7 @@ public class FoodImplV1 implements FoodService {
 			pStr.executeUpdate();
 			
 			pStr.close();
-			
 			int result = pStr.executeUpdate();
-			pStr.close();
 			return result;
 			
 			

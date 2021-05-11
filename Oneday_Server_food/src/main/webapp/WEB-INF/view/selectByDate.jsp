@@ -5,32 +5,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>나의 다이어트 일기</title>
-
 <style>
 	th,td {padding : 10px;}
-	input {width : 100px;}
 </style>
 
+<title>날짜별 조회 결과</title>
 </head>
 <body>
-	
-	<h2>나의 다이어트 일기</h2>
-	
-	<h3><a href = "/diet/insert/selectName">새로운 식단 입력하기</a></h3>
-	
-	<h3>날짜별 식단 조회하기</h3>
-	<form action ="/diet/dateSerch" method="get">
-	<input name ="sYear">년 <input name ="sMonth">월 <input name ="sDay">일 ~
-	<input name ="lYear">년 <input name ="lMonth">월 <input name ="lDay">일 
-	<button>조회하기</button>
-	</form>
-	
-	<p> 
-	<p> 
-	<p> 
-	
-	
+
+<h2>조회 결과</h2>
+
 	<table>
 		<thead>
 			<tr>
@@ -66,7 +50,8 @@
 	
 	</table>
 
-	
-	
+	<p>    
+	<p>   
+	<a href = "/diet">첫화면으로 돌아가기</a>	
 </body>
 </html>
