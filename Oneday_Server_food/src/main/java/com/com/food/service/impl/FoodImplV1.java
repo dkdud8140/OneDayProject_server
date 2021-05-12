@@ -55,7 +55,8 @@ public class FoodImplV1 implements FoodService {
 		// TODO 기록한 모든 리스트를 조회하는 메소드
 		
 		String sql = "SELECT * FROM view_일일섭취량";
-		sql += " ORDER BY 날짜 ";
+//		sql += " ORDER BY 날짜 ";
+		sql += " ORDER BY 일련번호 DESC ";
 		PreparedStatement pStr = null ;
 		
 		try {
